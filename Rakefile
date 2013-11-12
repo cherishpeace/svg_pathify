@@ -28,7 +28,7 @@ spec = Gem::Specification.new do |s|
   # s.rdoc_options      = %w(--main README)
 
   # Add any extra files to include in the gem (like your README)
-  s.files             = %w(README.md) + Dir.glob("{lib,test}/**/*")
+  s.files             = %w(README.md Rakefile svg_pathify.gemspec) + Dir.glob("{lib,test}/**/*")
   s.require_paths     = ["lib"]
   s.license           = "MIT"
 
