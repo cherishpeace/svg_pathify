@@ -43,9 +43,16 @@ module SvgPathify
         return node if node.text?
 
         type = CONVERTING_MAP[node.name.to_sym]
-        return node if type.nil?
 
-        type.new( node ).to_path_element
+        if type
+          type.new( node ).to_path_element
+        else
+          node.dup.tap do |node|
+            node.children.each do |child|
+              child.swap convert_node( child )
+            end
+          end
+        end
       end
 
   end

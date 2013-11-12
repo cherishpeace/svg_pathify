@@ -16,6 +16,8 @@ gem 'svg_pathify'
 
 
 ~~~ruby
+require 'svg_pathify'
+
 input  = %Q{<polyline points="350,75  379,161 469,161 397,215
                 423,301 350,250 277,301 303,215
                 231,161 321,161" />}

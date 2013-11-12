@@ -62,10 +62,23 @@ class SvgPathifyTest < Test::Unit::TestCase
     assert_xml_equal output, SvgPathify.convert( input )
   end
 
+  def test_deep_search
+    input   = %Q{<g><ellipse
+        rx="250" ry="100"
+        fill="none" stroke="blue" stroke-width="20" /></g>}
+    output  = %Q{<g><path d="M-250 0a250,100,0,1,1,-250,1Z"
+      stroke-width="20"
+      fill="none"
+      stroke="blue" /></g>}
+
+    assert_xml_equal output, SvgPathify.convert( input )
+    
+  end
+
   #-----> helper
 
   def assert_xml_equal( expect, other, msg=nil )
-    assert_equal Nokogiri.parse( expect ).root, Nokogiri.parse( other ).root
+    assert_equal Nokogiri::XML( expect, &:noblanks ).root, Nokogiri::XML( other, &:noblanks ).root
   end
 
 end
@@ -89,6 +102,6 @@ class Nokogiri::XML::Node
     sns = namespace; ons = other.namespace
     return false if !sns ^ !ons
     return false if sns && (sns.href != ons.href)
-    skids.to_enum.with_index.all?{ |ski,i| ski =~ okids[i] }
+    skids.to_a.uniq.sort == okids.to_a.uniq.sort
   end
 end
