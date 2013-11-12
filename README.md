@@ -1,4 +1,4 @@
-**svg_pathify** turns svg [basic shapes](http://www.w3.org/TR/SVG/shapes.html) into path svg elements.
+**svg_pathify** turns svg [basic shapes](http://www.w3.org/TR/SVG/shapes.html) into `<path>` svg elements.
 
 ## install
 
