@@ -4,10 +4,10 @@ module SvgPathify
 
     class Rect < ::SvgPathify::Shape
 
-      special_attr :width, :height
+      special_attr :width, :height, :x, :y
 
       def path_commands
-        "M0 0l#{width} 0l0 #{height}l#{-width} 0l0 #{-height}Z"
+        "M#{x} #{y}l#{width} 0l0 #{height}l#{-width} 0l0 #{-height}Z"
       end
 
     end
