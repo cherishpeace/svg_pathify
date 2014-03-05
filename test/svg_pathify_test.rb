@@ -54,7 +54,7 @@ class SvgPathifyTest < Test::Unit::TestCase
     input   = %Q{<ellipse
         rx="250" ry="100"
         fill="none" stroke="blue" stroke-width="20"  />}
-    output  = %Q{<path d="M-250 0a250,100,0,1,1,-250,1Z"
+    output  = %Q{<path d="M-250 0A250,100,0,1,1,-250,1Z"
       stroke-width="20"
       fill="none"
       stroke="blue" />}
@@ -66,7 +66,7 @@ class SvgPathifyTest < Test::Unit::TestCase
     input   = %Q{<g><ellipse
         rx="250" ry="100"
         fill="none" stroke="blue" stroke-width="20" /></g>}
-    output  = %Q{<g><path d="M-250 0a250,100,0,1,1,-250,1Z"
+    output  = %Q{<g><path d="M-250 0A250,100,0,1,1,-250,1Z"
       stroke-width="20"
       fill="none"
       stroke="blue" /></g>}
