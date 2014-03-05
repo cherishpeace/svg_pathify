@@ -9,7 +9,7 @@ module SvgPathify
       def path_commands
         [
           "M#{cx-rx} #{cy}",
-          "a#{rx},#{ry},0,1,1,#{cx-rx},#{cy+1}",
+          "A#{rx},#{ry},0,1,1,#{cx-rx},#{cy+1}",
           "Z"
         ].join
       end

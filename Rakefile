@@ -15,7 +15,7 @@ spec = Gem::Specification.new do |s|
 
   # Change these as appropriate
   s.name              = "svg_pathify"
-  s.version           = "0.1.2"
+  s.version           = "0.1.3"
   s.summary           = "turn svg shape tags into <path> tag."
   s.author            = "qhwa"
   s.email             = "qhwa@163.com"
